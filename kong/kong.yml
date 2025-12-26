@@ -1,0 +1,34 @@
+_format_version: "3.0"
+
+plugins:
+  - name: prometheus
+
+services:
+  - name: api-service
+    host: api-upstream
+    port: 80
+    protocol: http
+    routes:
+      - name: api-route
+        paths:
+          - /api
+        strip_path: false
+        plugins:
+          - name: correlation-id
+            config:
+              header_name: X-Request-ID
+              generator: uuid
+              echo_downstream: true
+          - name: rate-limiting
+            config:
+              minute: 5
+              policy: local
+
+upstreams:
+  - name: api-upstream
+    algorithm: round-robin
+    targets:
+      - target: service-a:8000
+        weight: 50
+      - target: service-b:8000
+        weight: 50
