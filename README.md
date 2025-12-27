@@ -97,8 +97,8 @@ Upstream (weighted)
 └── README.md
 
 This structure is intentionally designed to:
-	•	Support **multiple tech stacks** (Python now, Java later)
-	•	Allow an optional transition to **Kubernetes manifests** in the future
+	-	Support **multiple tech stacks** (Python now, Java later)
+	-	Allow an optional transition to **Kubernetes manifests** in the future
 ```
 ---
 
@@ -120,45 +120,48 @@ curl http://localhost:8000/api/v1/hello
 Repeat the call multiple times to observe traffic being served by both services, as Kong distributes traffic across upstream targets.
 
 ### Example response (service-a):
+```json
 {
   "service": "service-a",
   "version": "v1",
   "message": "Hello from API v1"
 }
-
+```
 ### Example response (service-b):
+
+```json
 
 {
   "service": "service-b",
   "version": "v2",
   "message": "Hello from API v2"
 }
-
+```
 ---
 
 ## 🤔 Why This Design Matters
 
 This lab mirrors real production gateway patterns:
-	•	Consumers talk to one stable endpoint
-	•	Rollouts and experiments happen at the gateway
-	•	Backends evolve independently
-	•	Failures and limits are handled centrally
+	-	Consumers talk to one stable endpoint
+	-	Rollouts and experiments happen at the gateway
+	-	Backends evolve independently
+	-	Failures and limits are handled centrally
 
 These principles are widely used in:
-	•	API platforms
-	•	Microservices architectures
-	•	Cloud-native systems
+	-	API platforms
+	-	Microservices architectures
+	-	Cloud-native systems
 
 ---
 
 ## ⏳ What’s Intentionally Deferred (For Now)
 
 To keep the learning experience focused, the following are planned but not yet implemented:
-	•	Kubernetes / Minikube deployment
-	•	Prometheus & Grafana (observability)
-	•	Java Spring Boot backend service
-	•	Ingress controller mode
-	•	CI/CD pipelines
+	-	Kubernetes / Minikube deployment
+	-	Prometheus & Grafana (observability)
+	-	Java Spring Boot backend service
+	-	Ingress controller mode
+	-	CI/CD pipelines
 
 These enhancements will be added incrementally, without refactoring the existing Docker-based setup.
 
@@ -167,27 +170,27 @@ These enhancements will be added incrementally, without refactoring the existing
 ## 🗺 Roadmap
 
 Planned future enhancements include:
-	1.	Optional Kubernetes (Minikube) deployment
-	2.	Running Kong Gateway in Kubernetes (DB-less mode)
-	3.	Re-applying weighted traffic routing in Kubernetes
-	4.	Adding observability in a Kubernetes-native way
-	5.	Introducing a Java Spring Boot backend service
+	-	Optional Kubernetes (Minikube) deployment
+	-	Running Kong Gateway in Kubernetes (DB-less mode)
+	-	Re-applying weighted traffic routing in Kubernetes
+	-	Adding observability in a Kubernetes-native way
+	-	Introducing a Java Spring Boot backend service
 
 Kubernetes is intentionally treated as an advanced, optional extension, not a prerequisite for understanding Kong.
 
 ---
 
 ## 📌 Notes
-	•	This project uses Kong OSS (Open Source), not Enterprise.
-	•	Gateway-level patterns are the primary focus.
-	•	The repository prioritises clarity and correctness over feature overload.
+	-	This project uses Kong OSS (Open Source), not Enterprise.
+	-	Gateway-level patterns are the primary focus.
+	-	The repository prioritises clarity and correctness over feature overload.
 
 ---
 
 ## 👤 Author
 
 Built as a hands-on learning project to explore:
-	•	API Gateway design
-	•	Traffic management patterns
-	•	Containerised backends
-	•	Cloud-native foundations
+	-	API Gateway design
+	-	Traffic management patterns
+	-	Containerised backends
+	-	Cloud-native foundations
