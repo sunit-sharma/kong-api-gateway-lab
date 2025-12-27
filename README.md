@@ -95,11 +95,10 @@ Upstream (weighted)
 │   └── docker-compose-python.yml
 │
 └── README.md
-
-This structure is intentionally designed to:
-	-	Support **multiple tech stacks** (Python now, Java later)
-	-	Allow an optional transition to **Kubernetes manifests** in the future
 ```
+This structure is intentionally designed to:
+ - Support **multiple tech stacks** (Python now, Java later)
+ -	Allow an optional transition to **Kubernetes manifests** in the future
 ---
 
 ## ▶️ Running the Lab (Docker)
@@ -115,7 +114,7 @@ docker compose -f docker-compose/docker-compose-python.yml up --build
 ---
 
 ## Test the API
-curl http://localhost:8000/api/v1/hello or just hit the URL from your browser.
+curl -i http://localhost:8000/api/v1/hello or just hit the URL from your browser.
 
 Repeat the call multiple times to observe traffic being served by both services, as Kong distributes traffic across upstream targets.
 
