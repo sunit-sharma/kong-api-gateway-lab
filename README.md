@@ -1,6 +1,6 @@
 # Kong API Gateway Lab
 
-A hands-on, end-to-end **API Gateway lab** demonstrating how to design, deploy, and evolve backend services behind **Kong Gateway (OSS)** using **Docker**.
+A hands-on, end-to-end **API Gateway lab** demonstrating how to design, deploy, and evolve backend services behind **Kong Gateway OSS(Open Source)** using **Docker**.
 
 This repository is intentionally built as a **learning + portfolio project**, focusing on **real-world gateway patterns** rather than toy examples.  
 Kubernetes is treated as a **future, optional extension**, not a prerequisite.
@@ -40,7 +40,7 @@ Kong Gateway (DB-less)
 Upstream (weighted)
   ├── service-a (FastAPI)
   └── service-b (FastAPI)
-
+``` 
 ### Key characteristics
 	•	Single external entry point (Kong)
 	•	Backend services are not exposed directly
@@ -81,7 +81,7 @@ Upstream (weighted)
 ---
 
 ## 🗂 Repository Structure (Current State)
-
+```
 .
 ├── backends/
 │   └── python-fastapi/
@@ -99,7 +99,7 @@ Upstream (weighted)
 This structure is intentionally designed to:
 	•	Support **multiple tech stacks** (Python now, Java later)
 	•	Allow an optional transition to **Kubernetes manifests** in the future
-
+```
 ---
 
 ## ▶️ Running the Lab (Docker)
@@ -178,7 +178,7 @@ Kubernetes is intentionally treated as an advanced, optional extension, not a pr
 ---
 
 ## 📌 Notes
-	•	This project uses Kong OSS, not Enterprise.
+	•	This project uses Kong OSS (Open Source), not Enterprise.
 	•	Gateway-level patterns are the primary focus.
 	•	The repository prioritises clarity and correctness over feature overload.
 
