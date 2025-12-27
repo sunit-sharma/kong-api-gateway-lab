@@ -47,6 +47,9 @@ Upstream (weighted)
 	•	Traffic routing is controlled centrally at the gateway
 	•	No consumer-side changes required during rollouts
 
+---
+
+
 ## 🚀 What’s Implemented So Far
 
 ### ✅ API Gateway
@@ -75,6 +78,7 @@ Upstream (weighted)
   - Request tracing via `X-Request-ID`
   - Propagated downstream
 
+---
 
 ## 🗂 Repository Structure (Current State)
 
@@ -96,6 +100,8 @@ This structure is intentionally designed to:
 	•	Support **multiple tech stacks** (Python now, Java later)
 	•	Allow an optional transition to **Kubernetes manifests** in the future
 
+---
+
 ## ▶️ Running the Lab (Docker)
 
 ### Prerequisites
@@ -105,6 +111,8 @@ This structure is intentionally designed to:
 ### Start the stack
 
 docker compose -f docker-compose/docker-compose-python.yml up --build
+
+---
 
 ## Test the API
 curl http://localhost:8000/api/v1/hello
@@ -126,6 +134,8 @@ Repeat the call multiple times to observe traffic being served by both services,
   "message": "Hello from API v2"
 }
 
+---
+
 ## 🤔 Why This Design Matters
 
 This lab mirrors real production gateway patterns:
@@ -139,6 +149,8 @@ These principles are widely used in:
 	•	Microservices architectures
 	•	Cloud-native systems
 
+---
+
 ## ⏳ What’s Intentionally Deferred (For Now)
 
 To keep the learning experience focused, the following are planned but not yet implemented:
@@ -149,6 +161,8 @@ To keep the learning experience focused, the following are planned but not yet i
 	•	CI/CD pipelines
 
 These enhancements will be added incrementally, without refactoring the existing Docker-based setup.
+
+---
 
 ## 🗺 Roadmap
 
@@ -161,14 +175,18 @@ Planned future enhancements include:
 
 Kubernetes is intentionally treated as an advanced, optional extension, not a prerequisite for understanding Kong.
 
+---
+
 ## 📌 Notes
 	•	This project uses Kong OSS, not Enterprise.
 	•	Gateway-level patterns are the primary focus.
 	•	The repository prioritises clarity and correctness over feature overload.
 
+---
+
 ## 👤 Author
 
-Built as a hands-on learning and portfolio project to explore:
+Built as a hands-on learning project to explore:
 	•	API Gateway design
 	•	Traffic management patterns
 	•	Containerised backends
